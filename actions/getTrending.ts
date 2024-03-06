@@ -9,6 +9,7 @@ const getTrending = async () => {
   for (let i = 0; i < 3; i++) {
     a.push(res.data?.coins[i]);
   }
+
   return a;
 };
 

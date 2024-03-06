@@ -1,4 +1,4 @@
-import getTrending from "@/utils/getTrending";
+import getTrending from "@/actions/getTrending";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Image from "next/image";
 import { redirect } from "next/navigation";
@@ -7,7 +7,6 @@ import Link from "next/link";
 
 const TopCrypto = async () => {
   const topCoins = await getTrending();
-  console.log(topCoins[0]?.item?.data?.price_change_percentage_24h?.usd);
   return (
     <div className="w-full bg-white rounded-md p-6 flex flex-col gap-y-6">
       <h1 className="font-medium text-lg">Trending Coins (24h) </h1>
@@ -37,7 +36,7 @@ const TopCrypto = async () => {
                   } py-1 px-2 rounded-md text-sm font-[600] flex flex-row gap-x-1 items-center justify-center min-w-16`}
                 >
                   {a > 0 ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                  {a > 0 ? a : -a}
+                  {a > 0 ? a : -a}%
                 </div>
               </div>
             </Link>
