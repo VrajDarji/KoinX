@@ -1,19 +1,9 @@
 import Nav from "@/components/Nav";
 import TopCrypto from "@/components/ui/TopCrypto";
 import GetStarted from "@/components/ui/getStarted";
-import getData from "@/utils/getData";
-import axios from "axios";
-import Image from "next/image";
 import React from "react";
 
-const layout = async ({
-  params,
-  children,
-}: {
-  params: { coinId: string };
-  children: React.ReactNode;
-}) => {
-  //   const data = await getData(params.coinId);
+const layout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex flex-col">
       <Nav />
