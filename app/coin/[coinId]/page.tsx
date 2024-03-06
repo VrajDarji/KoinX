@@ -4,6 +4,8 @@ import { ChevronsRight } from "lucide-react";
 import HeroChart from "@/components/ui/HeroChart";
 import getPrice from "@/actions/getData";
 import InfoLinks from "@/components/InfoGraphics";
+import Overview from "@/components/ui/Overview";
+import Sentiment from "@/components/ui/Sentiment";
 const Page = async ({ params }: { params: { coinId: string } }) => {
   const data = await getData(params.coinId);
   const price = await getPrice(params.coinId);
@@ -29,13 +31,22 @@ const Page = async ({ params }: { params: { coinId: string } }) => {
           name={data?.name}
           symbol={data?.symbol}
           imgUrl={data?.image?.large}
-          rank={data?.market_cap_rank}
+          rank={data?.market_data?.market_cap_rank}
           currentPriceInr={data?.market_data?.current_price?.inr}
           currentPriceUsd={data?.market_data?.current_price?.usd}
           priceChanged={data?.market_data?.price_change_percentage_24h}
         />
       </div>
       <InfoLinks />
+      <Overview
+        TodaysHigh={data?.market_data?.high_24h?.usd}
+        TodaysLow={data?.market_data?.low_24h?.usd}
+        currentPrice={data?.market_data?.current_price?.usd}
+        marketCap={data?.market_data?.market_cap?.usd}
+        rank={data?.market_data?.market_cap_rank}
+        volume={data?.market_data?.total_volume?.usd}
+      />
+      <Sentiment />
     </div>
   );
 };

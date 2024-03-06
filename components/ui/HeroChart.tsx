@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import TradingViewWidget from "@/components/ui/graph";
+import { formatter } from "@/lib/formatter";
 interface HeroChartProps {
   name: string;
   symbol: string;
@@ -26,10 +27,6 @@ const HeroChart: React.FC<HeroChartProps> = ({
       ? parseFloat(priceChanged.toFixed(1))
       : parseFloat(priceChanged.toFixed(2));
 
-  const formatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-  });
   return (
     <div className="w-full bg-white text-black rounded-md p-6 flex flex-col gap-y-4">
       <div className="flex flex-col gap-y-5 pb-6 border-b-2 px-2">
