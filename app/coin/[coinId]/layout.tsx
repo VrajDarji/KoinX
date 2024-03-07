@@ -1,4 +1,5 @@
 import Nav from "@/components/Nav";
+import YouMayAlsoLike from "@/components/YouMayAlsoLike";
 import TopCrypto from "@/components/ui/TopCrypto";
 import GetStarted from "@/components/ui/getStarted";
 import React from "react";
@@ -14,6 +15,7 @@ const layout = async ({ children }: { children: React.ReactNode }) => {
           <TopCrypto />
         </div>
       </div>
+      <YouMayAlsoLike />
     </div>
   );
 };

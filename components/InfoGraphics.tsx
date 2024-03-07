@@ -13,7 +13,7 @@ const links = [
 
 const InfoLinks = () => {
   return (
-    <div className="flex flex-row px-3 border-b-2 items-center gap-x-6">
+    <div className="flex flex-row px-3 border-b-2 items-center lg:gap-x-6 gap-x-2 w-full overflow-hidden">
       {links.map((link, index) => (
         <button
           key={index}

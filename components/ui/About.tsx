@@ -76,7 +76,7 @@ const About: React.FC<AboutProps> = ({ name, description }) => {
           ))}
         </div>
       </div>
-      <p>
+      <p className="text-sm">
         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem,
         temporibus dolorem! Doloremque odit dolor impedit sit fugiat. Odio
         cupiditate tenetur aliquid harum magni et, odit corporis sit totam
