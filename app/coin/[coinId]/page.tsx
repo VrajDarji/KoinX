@@ -6,10 +6,15 @@ import getPrice from "@/actions/getData";
 import InfoLinks from "@/components/InfoGraphics";
 import Overview from "@/components/ui/Overview";
 import Sentiment from "@/components/ui/Sentiment";
+import About from "@/components/ui/About";
+import Takenomics from "@/components/ui/Takenomics";
+import Team from "@/components/ui/Team";
+
 const Page = async ({ params }: { params: { coinId: string } }) => {
   const data = await getData(params.coinId);
   const price = await getPrice(params.coinId);
   const coin = price[params.coinId];
+
   return (
     <div className="flex flex-col gap-y-4 p-2">
       <div className="flex flex-row gap-x-2 text-sm">
@@ -47,6 +52,12 @@ const Page = async ({ params }: { params: { coinId: string } }) => {
         volume={data?.market_data?.total_volume?.usd}
       />
       <Sentiment />
+      <About
+        name={data?.localization?.en}
+        description={data?.description?.en}
+      />
+      <Takenomics />
+      <Team />
     </div>
   );
 };

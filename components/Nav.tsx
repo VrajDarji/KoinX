@@ -10,7 +10,7 @@ const NavLinks = [
 
 const Nav = () => {
   return (
-    <div className="bg-white h-16 border-b shadow-md py-2 px-8 flex items-center justify-between text-black sticky top-0">
+    <div className="bg-white h-16 border-b shadow-md py-2 px-8 flex items-center justify-between text-black sticky top-0 z-10">
       <Image
         src={"https://www.koinx.com/_next/static/media/Logo.5f2ad8d5.svg"}
         alt="logo"

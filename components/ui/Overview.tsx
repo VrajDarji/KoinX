@@ -84,7 +84,7 @@ const Overview: React.FC<OverviewProps> = ({
         <h1 className="flex flex-row gap-x-2 text-xl font-medium items-center">
           Fundamentals <InfoIcon size={18} />
         </h1>
-        <div className="grid grid-cols-2 gap-x-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16">
           {data.map((values, index) => (
             <div
               key={index}

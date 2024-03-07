@@ -34,3 +34,7 @@ body {
 .overflow-x-scroll::-webkit-scrollbar {
   display: none;
 }
+.desc a {
+  color: #1E8EFB;
+  text-decoration: underline;
+}

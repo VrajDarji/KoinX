@@ -48,7 +48,7 @@ const Sentiment = () => {
           ))}
         </div>
       </div>
-      <div className="w-full flex flex-col gap-y-3">
+      <div className="w-full flex flex-col gap-y-3 overflow-hidden">
         <h1 className="flex flex-row gap-x-2 text-xl font-medium items-center text-[#44475B]">
           Analyst Estimates <InfoIcon size={18} />
         </h1>
